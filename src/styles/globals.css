@@ -125,11 +125,40 @@
   }
 }
 
+/* ScrollSmoother wrapper/content helpers
+   Keep the wrapper sized to the viewport and ensure the inner content
+   can be the full scrollable height. This prevents children using
+   height:100vh or flex growth from expanding to the full document height
+   unexpectedly when ScrollSmoother manages transforms. */
+.smooth-wrapper {
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.smooth-content {
+  /* allow the content to be the full scroll height while still
+     making children that use 100vh behave as expected */
+  min-height: 100vh;
+}
+
 /* Set h1 font to Rubik Mono One by default */
 h1 {
   font-family: var(--font-rubik-mono-one), sans-serif;
 }
 
-h2, h3, h4, h5, h6, p, span, div, a, li, button, input, textarea {
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+div,
+a,
+li,
+button,
+input,
+textarea {
   font-family: var(--font-rubik), sans-serif;
 }

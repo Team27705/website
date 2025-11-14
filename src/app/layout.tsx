@@ -2,10 +2,13 @@ import "~/styles/globals.css";
 
 import { type Metadata } from "next";
 import { Geist, Rubik, Rubik_Mono_One } from "next/font/google";
+import SmoothScroller from "~/components/smooth-scroller";
+import Header from "~/components/header";
 
 export const metadata: Metadata = {
   title: "The ByteKnights - FTC 27705",
-  description: "The official website of FTC Team 27705, the Brooklyn ByteKnights.",
+  description:
+    "The official website of FTC Team 27705, the Brooklyn ByteKnights.",
   icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
 
@@ -30,9 +33,14 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${geist.variable} ${rubik.variable} ${rubikMonoOne.variable}`}>
+    <html
+      lang="en"
+      className={`${geist.variable} ${rubik.variable} ${rubikMonoOne.variable}`}
+    >
       <body>
-        {children}
+        {/* Header must be outside the SmoothSmoother wrapper so it remains fixed to the viewport */}
+        <Header />
+        <SmoothScroller>{children}</SmoothScroller>
       </body>
     </html>
   );

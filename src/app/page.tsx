@@ -3,14 +3,17 @@ import Image from "next/image";
 import { ArrowDown } from "lucide-react";
 import { get } from "http";
 import { getLogoSrc } from "~/components/get-logo";
-import Header from "~/components/header";
 
 export default function HomePage() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-center bg-linear-to-b from-[#032d64] to-[#15162c] text-white">
-      <div className="container flex h-screen items-center justify-center px-4 py-16" id="hero">
-        <div className="flex w-full max-w-[min(92vw,1200px)] flex-col items-center justify-center">
+      <div
+        className="relative container flex h-screen max-h-screen items-center justify-center px-4"
+        id="hero"
+      >
+        <div className="flex w-full max-w-[min(92vw,1200px)] flex-col items-center justify-center ">
           <Image
+            loading="eager"
             src={getLogoSrc("into-the-deep", "tagline")}
             alt="Logo"
             width={800}
@@ -20,14 +23,14 @@ export default function HomePage() {
         </div>
         <ArrowDown
           className="absolute bottom-8 left-1/2 z-50 -translate-x-1/2 animate-bounce text-yellow-400"
-          size={32}
+          size={48}
         />
       </div>
-      <Header />
+      {/* Header is rendered in the layout to keep it fixed to the viewport */}
       {
         /* Stuff to make this scroll */
         Array.from({ length: 10 }).map((_, i) => (
-          <div key={i} className="my-8 h-24 w-full" />
+          <div key={i} className="my-8 h-32 w-full" />
         ))
       }
     </main>
