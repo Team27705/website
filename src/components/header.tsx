@@ -103,7 +103,10 @@ const DesktopHeader = React.forwardRef<HTMLElement, {}>(
         <NavigationMenu>
           <NavigationMenuList>
             <NavigationMenuItem className="mr-3">
-              <NavigationMenuLink className="bg-none! hover:bg-none! focus:bg-none! data-[active=focus]:hover:bg-none! data-[active=true]:hover:bg-none!">
+              <NavigationMenuLink
+                href="/"
+                className="bg-none! hover:bg-none! focus:bg-none! data-[active=focus]:hover:bg-none! data-[active=true]:hover:bg-none!"
+              >
                 <Image
                   src={getLogoSrc("into-the-deep", "lockup")}
                   alt="Logo"
