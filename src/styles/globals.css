@@ -163,10 +163,9 @@ textarea {
   font-family: var(--font-rubik), sans-serif;
 }
 
-/* Override only the first NavigationMenu link (logo) without editing React source
-   Targets the first child of the navigation list and applies higher-specificity
-   CSS to override Tailwind utility classes coming from the component. */
-header [data-slot="navigation-menu"] [data-slot="navigation-menu-list"] > *:first-child [data-slot="navigation-menu-link"] {
+/* Override styles of only the first NavigationMenuLink (logo) component in the
+   header without editing the <NavigationMenuLink> component code. */
+header [data-slot="navigation-menu"] [data-slot="navigation-menu-list"]>*:first-child [data-slot="navigation-menu-link"] {
   background-color: transparent !important;
   background-image: none !important;
   padding: 0 !important;
@@ -178,8 +177,8 @@ header [data-slot="navigation-menu"] [data-slot="navigation-menu-list"] > *:firs
 }
 
 /* Ensure hover/focus don't reapply the component's utility hover backgrounds */
-header [data-slot="navigation-menu"] [data-slot="navigation-menu-list"] > *:first-child [data-slot="navigation-menu-link"]:hover,
-header [data-slot="navigation-menu"] [data-slot="navigation-menu-list"] > *:first-child [data-slot="navigation-menu-link"]:focus {
+header [data-slot="navigation-menu"] [data-slot="navigation-menu-list"]>*:first-child [data-slot="navigation-menu-link"]:hover,
+header [data-slot="navigation-menu"] [data-slot="navigation-menu-list"]>*:first-child [data-slot="navigation-menu-link"]:focus {
   background: transparent !important;
   box-shadow: none !important;
 }
