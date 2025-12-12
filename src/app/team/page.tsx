@@ -62,13 +62,6 @@ export default function TeamPage() {
           </section>
         ))
       }
-      {/* Header is rendered in the layout to keep it fixed to the viewport */}
-      {
-        /* Stuff to make this scroll */
-        Array.from({ length: 10 }).map((_, i) => (
-          <div key={i} className="my-8 h-32 w-full" />
-        ))
-      }
     </main>
   );
 }
