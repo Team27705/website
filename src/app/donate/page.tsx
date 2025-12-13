@@ -23,8 +23,8 @@ export default function DonatePage() {
           <h1 className="text-6xl font-bold text-yellow-400">Donate</h1>
         </div>
       </div>
-      <section className="flex flex-col sm:flex-row sm:space-x-8 max-w-[65vw]">
-        <Card className="bg-gray-800 text-white shadow-lg flex-1 text-center mx-2">
+      <section className="flex flex-col w-[90vw] gap-6 sm:flex-row sm:space-x-8 sm:max-w-[65vw]">
+        <Card className="bg-gray-800 text-white shadow-lg flex-1 text-center m-2">
           <CardHeader>
             <CardTitle>
               <h2 className="text-4xl font-semibold text-yellow-400 mb-4">
