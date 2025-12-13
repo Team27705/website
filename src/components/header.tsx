@@ -12,7 +12,18 @@ import {
   NavigationMenuList,
 } from "./ui/navigation-menu";
 import { Tooltip, TooltipContent, TooltipTrigger } from "./ui/tooltip";
-import { HamburgerIcon } from "lucide-react";
+import { Menu } from "lucide-react";
+import {
+  Sheet,
+  SheetClose,
+  SheetContent,
+  SheetDescription,
+  SheetFooter,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "./ui/sheet";
+import { Button } from "./ui/button";
 
 /* Enable header scroll behavior:
   Add id="hero" or data-header-trigger to your hero element.
@@ -96,15 +107,26 @@ export default function Header() {
     };
   }, []);
 
-  return <DesktopHeader ref={ref} />;
+  return <HeaderWrapper ref={ref} />;
 }
 
-const DesktopHeader = React.forwardRef<HTMLElement, {}>(
-  function DesktopHeader(_, ref) {
+const HeaderWrapper = React.forwardRef<HTMLElement, { className?: string }>(
+  function HeaderWrapper({ className }, ref) {
+    return (
+      <>
+        <DesktopHeader ref={ref} className="hidden sm:flex" />
+        <MobileHeader ref={ref} className="flex sm:hidden" />
+      </>
+    );
+  },
+);
+
+const DesktopHeader = React.forwardRef<HTMLElement, { className?: string }>(
+  function DesktopHeader({ className }, ref) {
     return (
       <header
         ref={ref}
-        className="fixed z-50 flex max-h-32 w-full items-center justify-center bg-transparent p-4"
+        className={`fixed z-50 flex max-h-32 w-full items-center justify-center bg-transparent p-4 ${className || ""}`}
         aria-hidden={false}
       >
         <NavigationMenu>
@@ -149,7 +171,72 @@ const DesktopHeader = React.forwardRef<HTMLElement, {}>(
             ))}
           </NavigationMenuList>
         </NavigationMenu>
-        <div className="flex flex-col gap-0 text-yellow-400"></div>
+      </header>
+    );
+  },
+);
+
+const MobileHeader = React.forwardRef<HTMLElement, { className?: string }>(
+  function MobileHeader({ className }, ref) {
+    return (
+      <header
+        ref={ref}
+        className={`fixed right-0 left-0 z-50 flex items-center justify-between bg-transparent px-3 py-3 ${className || ""}`}
+        aria-hidden={false}
+      >
+        <a href="/" className="shrink-0">
+          <Image
+            src={getLogoSrc("into-the-deep", "lockup")}
+            alt="Logo"
+            width={120}
+            height={15}
+            className="h-12 w-auto"
+            loading="eager"
+          />
+        </a>
+
+        <Sheet>
+          <SheetTrigger asChild>
+            <Button
+              aria-label="Open navigation"
+              className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-yellow-400/60 bg-black/30 text-yellow-400 shadow-sm backdrop-blur transition hover:bg-black/50 focus:ring-2 focus:ring-yellow-400 focus:ring-offset-2 focus:ring-offset-black focus:outline-none"
+            >
+              <Menu className="h-6 w-6" />
+            </Button>
+          </SheetTrigger>
+          <SheetContent
+            side="right"
+            className="w-72 border-yellow-400/30 bg-black/90 text-yellow-400"
+          >
+            <SheetHeader className="mb-4">
+              <SheetTitle className="text-yellow-400">Menu</SheetTitle>
+              <SheetDescription className="text-sm text-yellow-200/80">
+                Choose where to go next.
+              </SheetDescription>
+            </SheetHeader>
+            <nav className="space-y-2">
+              {components.map((component) => (
+                <a
+                  key={component.title}
+                  href={component.href}
+                  className="block rounded-md px-3 py-2 text-base text-yellow-400 transition hover:bg-yellow-400/10 focus:bg-yellow-400/10 focus:outline-none"
+                >
+                  <div className="font-semibold">{component.title}</div>
+                  <p className="text-sm text-yellow-200/80">
+                    {component.description}
+                  </p>
+                </a>
+              ))}
+            </nav>
+            <SheetFooter className="mt-4 flex justify-end">
+              <SheetClose asChild>
+                <button className="rounded-md border border-yellow-400/60 px-3 py-2 text-sm text-yellow-400 transition hover:bg-yellow-400/10 focus:ring-2 focus:ring-yellow-400 focus:ring-offset-2 focus:ring-offset-black focus:outline-none">
+                  Close
+                </button>
+              </SheetClose>
+            </SheetFooter>
+          </SheetContent>
+        </Sheet>
       </header>
     );
   },
