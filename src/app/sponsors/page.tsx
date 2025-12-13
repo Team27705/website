@@ -42,14 +42,14 @@ export default function SponsorsPage() {
         className="relative container flex h-[35vh] max-h-[35vh] items-center justify-center px-4 pt-32"
       >
         <div className="flex w-full max-w-[min(92vw,1200px)] flex-col items-center justify-center">
-          <h1 className="text-6xl font-bold text-yellow-400">Our Sponsors</h1>
+          <h1 className="text-center text-6xl font-bold text-yellow-400">Our Sponsors</h1>
         </div>
       </div>
       <section
         className="relative container flex w-full flex-col items-center justify-center px-4 py-8"
         id="sponsors"
       >
-        <div className="flex w-full max-w-[min(92vw,1200px)] gap-x-6 items-center justify-center">
+        <div className="flex flex-col sm:flex-row w-full max-w-[min(92vw,1200px)] gap-6 items-center justify-center">
           {sponsors.map((sponsor) => (
             <Card
               key={sponsor.name}
