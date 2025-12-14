@@ -24,6 +24,7 @@ import {
   SheetTrigger,
 } from "./ui/sheet";
 import { Button } from "./ui/button";
+import { cn } from "~/lib/utils";
 
 /* Enable header scroll behavior:
   Add id="hero" or data-header-trigger to your hero element.
@@ -160,7 +161,10 @@ const DesktopHeader = React.forwardRef<HTMLElement, { className?: string }>(
     return (
       <header
         ref={ref}
-        className={`fixed z-50 flex max-h-32 w-full items-center justify-center bg-transparent p-4 ${className || ""}`}
+        className={cn(
+          "fixed z-50 flex max-h-32 w-full items-center justify-center bg-transparent p-4",
+          className,
+        )}
         aria-hidden={false}
       >
         <NavigationMenu>
@@ -216,7 +220,10 @@ const MobileHeader = React.forwardRef<HTMLElement, { className?: string }>(
     return (
       <header
         ref={ref}
-        className={`fixed right-0 left-0 z-50 flex items-center justify-between bg-transparent px-3 py-3 ${className || ""}`}
+        className={cn(
+          "fixed right-0 left-0 z-50 flex items-center justify-between bg-transparent px-3 py-3",
+          className,
+        )}
         aria-hidden={false}
       >
         <a href="/" className="shrink-0">
