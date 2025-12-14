@@ -4,11 +4,13 @@ import { ArrowDown } from "lucide-react";
 import { getLogoSrc } from "~/components/get-logo";
 import { env } from "~/env";
 
+const videoOpacityLevel = 0.3;
+
 export default function HomePage() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-center bg-linear-to-b from-[#032d64] to-[#15162c] text-white">
       <div
-        className="relative container flex h-screen max-h-screen items-center justify-center px-4"
+        className="relative flex h-screen max-h-screen w-full items-center justify-center"
         id="hero"
       >
         <div className="absolute inset-0 overflow-hidden" id="background-video">
@@ -17,16 +19,16 @@ export default function HomePage() {
             loop
             muted
             playsInline
-            className="h-full w-screen object-cover"
+            className="h-full w-full object-cover"
             src={env.NEXT_PUBLIC_BG_VIDEO_URL}
             style={{
-              mask: "linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0) 100%)",
+              mask: `linear-gradient(to bottom, rgba(0,0,0,${videoOpacityLevel}) 0%, rgba(0,0,0,${videoOpacityLevel}) 50%, rgba(0,0,0,0) 100%)`,
               WebkitMask:
-                "linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0) 100%)",
+                `linear-gradient(to bottom, rgba(0,0,0,${videoOpacityLevel}) 0%, rgba(0,0,0,${videoOpacityLevel}) 50%, rgba(0,0,0,0) 100%)`,
             }}
           />
         </div>
-        <div className="relative z-10 flex w-full max-w-[min(92vw,1200px)] flex-col items-center justify-center">
+        <div className="relative z-10 flex w-full max-w-[min(92vw,1200px)] flex-col items-center justify-center px-4">
           <Image
             loading="eager"
             src={getLogoSrc("into-the-deep", "tagline")}
