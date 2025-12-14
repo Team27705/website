@@ -43,11 +43,17 @@ export default function HomePage() {
           size={48}
         />
       </div>
+      <section className="pt-30">
+        <h1 className="my-20 text-center text-4xl font-bold text-white md:text-5xl lg:text-6xl">
+          BUILT TO PERFORM. <br />
+          more placeholder stuff
+        </h1>
+      </section>
       {/* Header is rendered in the layout to keep it fixed to the viewport */}
       {
         /* Stuff to make this scroll */
         Array.from({ length: 10 }).map((_, i) => (
-          <div key={i} className="my-8 h-32 w-full" />
+          <div key={i} className="my-8 h-32 w-full text-center" >holy guacamole what a cool homepage x{i+1}</div>
         ))
       }
     </main>
