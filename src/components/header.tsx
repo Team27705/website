@@ -135,8 +135,8 @@ function HeaderWrapper({
   desktopRef,
   mobileRef,
 }: {
-  desktopRef: React.RefObject<HTMLElement>;
-  mobileRef: React.RefObject<HTMLElement>;
+  desktopRef: React.RefObject<HTMLElement | null>;
+  mobileRef: React.RefObject<HTMLElement | null>;
 }) {
   return (
     <>
