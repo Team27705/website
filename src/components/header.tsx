@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
@@ -58,9 +58,10 @@ const components: { title: string; href: string; description: string }[] = [
 export default function Header() {
   const desktopRef = useRef<HTMLElement | null>(null);
   const mobileRef = useRef<HTMLElement | null>(null);
+  const [isHydrated, setIsHydrated] = useState(false);
 
   useEffect(() => {
-    if (typeof window === "undefined") return;
+    setIsHydrated(true);
 
     gsap.registerPlugin(ScrollTrigger);
 
@@ -127,6 +128,10 @@ export default function Header() {
       }
     };
   }, []);
+
+  if (!isHydrated) {
+    return null;
+  }
 
   return <HeaderWrapper desktopRef={desktopRef} mobileRef={mobileRef} />;
 }
