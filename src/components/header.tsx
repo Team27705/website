@@ -49,7 +49,7 @@ const components: { title: string; href: string; description: string }[] = [
     description: "Give us a hand to keep us going!",
   },
   {
-    title: "FAQ",
+    title: "FAQs",
     href: "/faq",
     description: "Frequently Asked Questions",
   },
@@ -216,10 +216,21 @@ const MobileHeader = React.forwardRef<HTMLElement, { className?: string }>(
                 Choose where to go next.
               </SheetDescription>
             </SheetHeader>
-            <nav className="space-y-2">
+            <NavigationMenu className="space-y-2">
               <NavigationMenuList className="flex-col">
+                <NavigationMenuItem key={"Home"} className="w-full">
+                  <NavigationMenuLink
+                    href="/"
+                    className="block rounded-md px-3 py-2 text-base text-yellow-400 transition hover:bg-yellow-400/10 focus:bg-yellow-400/10 focus:outline-none"
+                  >
+                    <div className="font-semibold">Home</div>
+                    <p className="text-sm text-yellow-200/80">
+                      Back to the homepage
+                    </p>
+                  </NavigationMenuLink>
+                </NavigationMenuItem>
                 {components.map((component) => (
-                  <NavigationMenuItem key={component.title}>
+                  <NavigationMenuItem key={component.title} className="w-full">
                     <NavigationMenuLink
                       href={component.href}
                       className="block rounded-md px-3 py-2 text-base text-yellow-400 transition hover:bg-yellow-400/10 focus:bg-yellow-400/10 focus:outline-none"
@@ -232,12 +243,12 @@ const MobileHeader = React.forwardRef<HTMLElement, { className?: string }>(
                   </NavigationMenuItem>
                 ))}
               </NavigationMenuList>
-            </nav>
+            </NavigationMenu>
             <SheetFooter className="mt-4 flex justify-end">
               <SheetClose asChild>
-                <button className="rounded-md border border-yellow-400/60 px-3 py-2 text-sm text-yellow-400 transition hover:bg-yellow-400/10 focus:ring-2 focus:ring-yellow-400 focus:ring-offset-2 focus:ring-offset-black focus:outline-none">
+                <Button className="rounded-md border border-yellow-400/60 px-3 py-2 text-sm text-yellow-400 transition hover:bg-yellow-400/10 focus:ring-2 focus:ring-yellow-400 focus:ring-offset-2 focus:ring-offset-black focus:outline-none">
                   Close
-                </button>
+                </Button>
               </SheetClose>
             </SheetFooter>
           </SheetContent>
