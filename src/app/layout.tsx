@@ -1,6 +1,7 @@
 import "~/styles/globals.css";
 
-import { type Metadata } from "next";
+import type { Metadata } from "next";
+import type { Viewport } from "next";
 import { Geist, Rubik, Rubik_Mono_One } from "next/font/google";
 import SmoothScroller from "~/components/smooth-scroller";
 import Header from "~/components/header";
@@ -12,6 +13,10 @@ export const metadata: Metadata = {
     "The official website of FTC Team 27705, the Brooklyn ByteKnights.",
   icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
+
+export const viewport: Viewport = {
+  themeColor: '#15162c',
+}
 
 const geist = Geist({
   subsets: ["latin"],
@@ -38,7 +43,7 @@ export default function RootLayout({
       lang="en"
       className={`${geist.variable} ${rubik.variable} ${rubikMonoOne.variable}`}
     >
-      <body>
+      <body className="bg-[#15162c]">
         {/* Header must be outside the SmoothSmoother wrapper so it remains fixed to the viewport */}
         <Header />
         <SmoothScroller>
