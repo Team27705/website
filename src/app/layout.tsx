@@ -4,6 +4,7 @@ import { type Metadata } from "next";
 import { Geist, Rubik, Rubik_Mono_One } from "next/font/google";
 import SmoothScroller from "~/components/smooth-scroller";
 import Header from "~/components/header";
+import Footer from "~/components/footer";
 
 export const metadata: Metadata = {
   title: "The ByteKnights - FTC 27705",
@@ -40,7 +41,10 @@ export default function RootLayout({
       <body>
         {/* Header must be outside the SmoothSmoother wrapper so it remains fixed to the viewport */}
         <Header />
-        <SmoothScroller>{children}</SmoothScroller>
+        <SmoothScroller>
+          {children}
+          <Footer />
+        </SmoothScroller>
       </body>
     </html>
   );
