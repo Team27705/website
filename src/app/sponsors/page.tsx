@@ -13,7 +13,7 @@ const sponsors = [
     logo: "/sponsors/ike-heller.png",
   },
   {
-    name: "DEKA Foundation",
+    name: "The DEKA Foundation",
   },
   {
     name: "Jabil Cares Foundation",
@@ -73,7 +73,7 @@ export default function SponsorsPage() {
                         className="object-contain w-full h-auto"
                       />
                     ) : (
-                      <span className="text-2xl">{sponsor.name}</span>
+                      <span className="text-4xl sm:text-2xl">{sponsor.name}</span>
                     )}
                   </a>
                 ) : sponsor.logo ? (
@@ -85,7 +85,7 @@ export default function SponsorsPage() {
                     className="object-contain w-full h-auto"
                   />
                 ) : (
-                  <span className="text-2xl">{sponsor.name}</span>
+                  <span className="text-4xl sm:text-2xl">{sponsor.name}</span>
                 )}
               </CardContent>
             </Card>
