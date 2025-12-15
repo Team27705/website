@@ -162,7 +162,7 @@ const DesktopHeader = React.forwardRef<HTMLElement, { className?: string }>(
       <header
         ref={ref}
         className={cn(
-          "fixed z-50 flex max-h-32 w-full items-center justify-center bg-transparent p-4",
+          "fixed z-50 mb-30 flex max-h-32 w-full items-center justify-center bg-linear-to-b from-[#15162cff] via-[#15162cb9] to-[#032d6400] p-4",
           className,
         )}
         aria-hidden={false}
@@ -192,9 +192,9 @@ const DesktopHeader = React.forwardRef<HTMLElement, { className?: string }>(
                       href={component.href}
                       className="mt-10 block rounded-md p-3 leading-none text-yellow-400 no-underline transition-colors outline-none select-none hover:bg-gray-100 focus:bg-gray-100"
                     >
-                      <div className="text-lg leading-none font-medium">
+                        <div className="text-lg leading-none font-medium">
                         {component.title}
-                      </div>
+                        </div>
                     </NavigationMenuLink>
                   </TooltipTrigger>
                   <TooltipContent
