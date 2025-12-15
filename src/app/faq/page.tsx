@@ -80,7 +80,7 @@ export default function FAQPage() {
               <AccordionItem
                 key={index}
                 value={`item-${index}`}
-                className="text-white shadow-lg"
+                className="text-white"
               >
                 <AccordionTrigger className="text-xl font-semibold">
                   {item.question}
@@ -93,7 +93,7 @@ export default function FAQPage() {
             <AccordionItem
               key="more-info"
               value="more-info"
-              className="text-white shadow-lg"
+              className="text-white"
             >
               <AccordionTrigger className="text-xl font-semibold">
                 I have more questions, who can I ask them to?
