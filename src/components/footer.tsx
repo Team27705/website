@@ -5,8 +5,10 @@ export default function Footer() {
     <footer className="w-full bg-[#15162c] py-6 pt-12 text-white">
       <div className="container mx-auto px-4 text-center">
         <div className="flex flex-col items-center justify-center gap-2 text-sm">
-          &copy; {new Date().getFullYear()} The ByteKnights - FTC Team 27705.
-          All rights reserved.
+          <div>
+            &copy; {new Date().getFullYear()} The ByteKnights - FTC Team 27705.
+            All rights reserved.
+          </div>
           <div>
             Follow us on
             <a href="https://instagram.com/team27705">
@@ -28,7 +30,9 @@ export default function Footer() {
               />
             </a>
           </div>
-          Built by Issac Liu
+          <div>
+            Built by <a href="https://github.com/Camuise">Issac Liu</a>.
+          </div>
         </div>
       </div>
     </footer>
