@@ -94,13 +94,15 @@ export function TeamEventsComponent() {
                 {EventTypeIconsMap[event.type]}
                 <CardTitle className={text}>{event.name}</CardTitle>
               </div>
-              <CardDescription className={cn(text, "flex flex-row gap-1")}>
+              <CardDescription
+                className={cn(text, "flex flex-col gap-1 sm:flex-row")}
+              >
                 {new Date(event.date).toLocaleDateString(undefined, {
                   year: "numeric",
                   month: "long",
                   day: "numeric",
                 })}
-                {" - "}
+                <span className="hidden sm:inline">@</span>
                 {event.locationName && event.locationAddress && (
                   <a
                     href={mapsUrl}
