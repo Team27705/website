@@ -221,7 +221,7 @@ const MobileHeader = React.forwardRef<HTMLElement, { className?: string }>(
       <header
         ref={ref}
         className={cn(
-          "fixed right-0 left-0 z-50 flex items-center justify-between bg-transparent px-3 py-3",
+          "fixed right-0 left-0 z-50 flex items-center justify-between bg-transparent px-3 py-3 bg-linear-to-b from-[#15162cff] via-[#15162ce6] to-[#032d6400]",
           className,
         )}
         aria-hidden={false}
