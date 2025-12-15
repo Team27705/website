@@ -86,7 +86,7 @@ export default function DonatePage() {
               Send your contribution via a check to the Brooklyn Tech Alumni Foundation.
             </CardDescription>
           </CardHeader>
-          <CardContent className="space-y-4 flex flex-col items-center justify-center sm:max-w-[80%] mx-auto">
+          <CardContent className="space-y-4 flex flex-col items-center justify-center sm:max-w-[85%] mx-auto">
             <p>
               Please make checks payable to{" "}
               <b>"Brooklyn Tech Alumni Foundation"</b> with{" "}
@@ -101,7 +101,7 @@ export default function DonatePage() {
               <br />
               Brooklyn, NY 11202-6608
             </address>
-            <Alert className="bg-gray-800 text-white shadow-lg flex-1 text-left mx-2">
+            <Alert className="bg-gray-800 text-white shadow-lg flex-1 text-left mx-2 px-2">
               <Info />
               <AlertTitle className=" font-bold">
                 Tax Information
