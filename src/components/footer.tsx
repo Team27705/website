@@ -17,7 +17,7 @@ export default function Footer() {
                 width={24}
                 height={24}
                 alt="Instagram"
-                className="ml-2 inline-block"
+                className="mx-1 inline-block"
               />
             </a>
             <a href="https://github.com/Team27705">
@@ -26,7 +26,7 @@ export default function Footer() {
                 width={24}
                 height={24}
                 alt="GitHub"
-                className="ml-2 inline-block"
+                className="mx-1 inline-block"
               />
             </a>
           </div>
