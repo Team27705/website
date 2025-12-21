@@ -12,6 +12,30 @@ import { Button } from "./ui/button";
 import * as z from "zod";
 import { cn } from "~/lib/utils";
 
+// CHANGE EVENTS HERE
+export const TeamEvents: z.infer<typeof TeamEventSchema>[] = [
+  {
+    name: "FTC NYC Qualifier 8",
+    date: "2026-01-17",
+    locationName: "Francis Lewis High School",
+    locationAddress:
+      "58-20 Utopia Pkwy, Fresh Meadows, NY 11365, United States",
+    description:
+      "The eighth qualifier event of the FTC season, where teams compete to advance to the regional championships.\n\nThis is our second qualifier of the season.",
+    type: "COMP",
+  },
+  {
+    name: "FTC NYC Super Qualifier 1",
+    date: "2026-02-28",
+    locationName: "John Dewey High School",
+    locationAddress:
+      "50 Avenue X, Brooklyn, NY 11223, United States",
+    description:
+      "The first super qualifier event of the FTC season, where top teams from qualifiers compete for a chance to advance to the regional championships.",
+    type: "COMP",
+  },
+];
+
 const teamEventEnum = z.enum(["COMP", "WORKSHOP", "WEBINAR", "CONFERENCE"]);
 type TeamEventType = z.infer<typeof teamEventEnum>;
 
@@ -58,28 +82,6 @@ const TeamEventSchema = z.object({
   description: z.string().max(1000).optional(),
   type: teamEventEnum,
 });
-
-export const TeamEvents: z.infer<typeof TeamEventSchema>[] = [
-  {
-    name: "FTC Qualifier 4",
-    date: "2025-12-20",
-    locationName: "University Heights High School",
-    locationAddress: "701 Saint Anns Ave, Bronx, NY 10455, United States",
-    description:
-      "The fourth qualifier event for the FTC season, where teams compete to advance to the regional championships.\n\nThis is our first qualifier of the season.",
-    type: "COMP",
-  },
-  {
-    name: "FTC Qualifier 8",
-    date: "2026-01-17",
-    locationName: "Francis Lewis High School",
-    locationAddress:
-      "58-20 Utopia Pkwy, Fresh Meadows, NY 11365, United States",
-    description:
-      "The eighth qualifier event for the FTC season, where teams compete to advance to the regional championships.\n\nThis is our second qualifier of the season.",
-    type: "COMP",
-  },
-];
 
 export function TeamEventsComponent({ className }: { className?: string }) {
   return (
