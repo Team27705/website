@@ -53,7 +53,7 @@ export default function HomePage() {
         <h1 className="my-10 text-center text-4xl font-bold text-wrap text-white md:text-5xl lg:text-6xl">
           WHAT WE'VE DONE
         </h1>
-        <div className="mx-auto w-full justify-center flex flex-col sm:flex-row flex-wrap">
+        <div className="mx-auto w-full justify-center flex flex-row flex-wrap gap-8">
           <Award className="w-42">
             <AwardEventLogo>
               <Logo season="decode" variant="gamewordmark" className="w-full" />
