@@ -1,7 +1,7 @@
 import { cn } from "~/lib/utils";
 import AwardBanner from "@/public/award-banner.svg";
 
-export function AwardBody({
+export function Award({
   className,
   children,
 }: {
@@ -11,7 +11,7 @@ export function AwardBody({
   return (
     <div className={cn("relative flex justify-center", className)}>
       <AwardBanner className="h-64 w-auto text-blue-400" />
-      <div className="absolute inset-0 flex flex-col items-center gap-4 mt-6 mb-10">
+      <div className="absolute inset-0 mt-6 mb-12 flex flex-col items-center justify-center gap-4">
         {children}
       </div>
     </div>
@@ -28,7 +28,7 @@ export function AwardEventLogo({
   return (
     <div
       className={cn(
-        "w-[80%] text-center text-lg leading-tight font-semibold text-white -mb-2",
+        "-mb-2 w-[80%] text-center text-lg leading-tight font-semibold text-white",
         className,
       )}
     >
@@ -66,7 +66,7 @@ export function AwardTitle({
   return (
     <h2
       className={cn(
-        "max-w-[85%] text-center text-xl leading-tight font-bold text-yellow-400 my-auto",
+        "my-auto max-w-[85%] text-center text-xl leading-tight font-bold text-yellow-400",
         className,
       )}
     >

@@ -5,7 +5,7 @@ import { getLogoSrc, Logo } from "~/components/get-logo";
 import { env } from "~/env";
 import { TeamEventsComponent } from "~/components/team-events";
 import {
-  AwardBody,
+  Award,
   AwardEventLogo,
   AwardEventName,
   AwardTitle,
@@ -53,13 +53,15 @@ export default function HomePage() {
         <h1 className="my-10 text-center text-4xl font-bold text-wrap text-white md:text-5xl lg:text-6xl">
           OUR ACHIEVEMENTS
         </h1>
-        <AwardBody className="mx-auto">
-          <AwardEventLogo>
-            <Logo season="decode" variant="gamewordmark" className="w-full" />
-          </AwardEventLogo>
-          <AwardEventName>NYC Qualifier 4</AwardEventName>
-          <AwardTitle>Inspire Award 2nd Place</AwardTitle>
-        </AwardBody>
+        <div className="mx-auto w-full justify-center flex flex-col sm:flex-row flex-wrap">
+          <Award className="w-42">
+            <AwardEventLogo>
+              <Logo season="decode" variant="gamewordmark" className="w-full" />
+            </AwardEventLogo>
+            <AwardEventName>NYC Qualifier 4</AwardEventName>
+            <AwardTitle>Inspire Award 2nd Place</AwardTitle>
+          </Award>
+        </div>
       </section>
       <section className="mt-5 max-w-[80vw]">
         <h1 className="my-10 text-center text-4xl font-bold text-wrap text-white md:text-5xl lg:text-6xl">
