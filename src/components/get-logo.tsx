@@ -37,9 +37,6 @@ const ASSET_OVERRIDES: Partial<
   // [SEASONS.INTO_THE_DEEP]: {
   //   [LOGO_VARIANTS.WORDMARK]: "intodeep-vector.svg",
   // },
-  [SEASONS.DECODE]: {
-    [LOGO_VARIANTS.GAMEWORDMARK]: "game-wordmark.png",
-  },
 };
 
 const DEFAULT_SEASON: Season = SEASONS.INTO_THE_DEEP;
@@ -63,7 +60,10 @@ export function resolveLogoPath(season: Season, variant: LogoVariant): string {
   const overridesForSeason = ASSET_OVERRIDES[season];
   const overrideFilename = overridesForSeason?.[variant];
   // attempt svg by default (or use override)
-  const filename = overrideFilename ?? `${variant}.svg`;
+  let filename = overrideFilename ?? `${variant}.svg`;
+  if (variant === LOGO_VARIANTS.GAMEWORDMARK) {
+    filename = overrideFilename ?? `${variant}.png`;
+  }
 
   return `/meta/${season}/${filename}`;
 }
