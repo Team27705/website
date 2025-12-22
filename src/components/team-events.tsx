@@ -1,3 +1,4 @@
+import React, { cloneElement } from "react";
 import {
   Card,
   CardAction,
@@ -7,8 +8,7 @@ import {
   CardHeader,
   CardTitle,
 } from "./ui/card";
-import { Trophy } from "lucide-react";
-import { Button } from "./ui/button";
+import { Gamepad2, Sword, Swords, Trophy } from "lucide-react";
 import * as z from "zod";
 import { cn } from "~/lib/utils";
 
@@ -22,50 +22,53 @@ export const TeamEvents: z.infer<typeof TeamEventSchema>[] = [
       "58-20 Utopia Pkwy, Fresh Meadows, NY 11365, United States",
     description:
       "The eighth qualifier event of the FTC season, where teams compete to advance to the regional championships.\n\nThis is our second qualifier of the season.",
-    type: "COMP",
+    type: "QUALI",
   },
   {
     name: "FTC NYC Super Qualifier 1",
     date: "2026-02-28",
     locationName: "John Dewey High School",
-    locationAddress:
-      "50 Avenue X, Brooklyn, NY 11223, United States",
+    locationAddress: "50 Avenue X, Brooklyn, NY 11223, United States",
     description:
       "The first super qualifier event of the FTC season, where top teams from qualifiers compete for a chance to advance to the regional championships.",
-    type: "COMP",
+    type: "SUPERQUALI",
   },
 ];
 
-const teamEventEnum = z.enum(["COMP", "WORKSHOP", "WEBINAR", "CONFERENCE"]);
+const teamEventEnum = z.enum(["QUALI", "SUPERQUALI", "CHAMPS", "SCRIM"]);
 type TeamEventType = z.infer<typeof teamEventEnum>;
 
 const EventTypeIconsMap: Record<TeamEventType, React.ReactNode> = {
-  COMP: <Trophy className="stroke-blue-100" />,
-  WORKSHOP: <></>,
-  WEBINAR: <></>,
-  CONFERENCE: <></>,
+  QUALI: <Sword />,
+  SUPERQUALI: <Swords />,
+  CHAMPS: <Trophy />,
+  SCRIM: <Gamepad2 />,
 };
 
 const EventTypeColorsMap: Record<
   TeamEventType,
-  { background: string; text: string; border: string }
+  { background: string; icon: string; text: string; border: string }
 > = {
-  COMP: {
+  QUALI: {
+    icon: "stroke-blue-100",
     background: "bg-blue-900",
     text: "text-blue-200",
     border: "border-blue-400",
   },
-  WORKSHOP: {
-    background: "bg-green-900",
-    text: "text-green-200",
-    border: "border-green-400",
+  SUPERQUALI: {
+    icon: "stroke-purple-100",
+    background: "bg-purple-900",
+    text: "text-purple-200",
+    border: "border-purple-400",
   },
-  WEBINAR: {
+  CHAMPS: {
+    icon: "stroke-yellow-100",
     background: "bg-yellow-900",
     text: "text-yellow-200",
     border: "border-yellow-400",
   },
-  CONFERENCE: {
+  SCRIM: {
+    icon: "stroke-red-100",
     background: "bg-red-900",
     text: "text-red-200",
     border: "border-red-400",
@@ -93,7 +96,12 @@ export function TeamEventsComponent({ className }: { className?: string }) {
           <Card key={index} className={`mb-4 ${background} ${border}`}>
             <CardHeader>
               <div className="flex items-center gap-2">
-                {EventTypeIconsMap[event.type]}
+                {cloneElement(
+                  EventTypeIconsMap[event.type] as React.ReactElement,
+                  {
+                    className: EventTypeColorsMap[event.type].icon,
+                  } as React.Attributes,
+                )}
                 <CardTitle className={text}>{event.name}</CardTitle>
               </div>
               <CardDescription
