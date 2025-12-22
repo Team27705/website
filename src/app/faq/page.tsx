@@ -24,15 +24,15 @@ const faqData: FAQItem[] = [
   {
     question: "How often does the team meet/ What is the time commitment?",
     answer:
-      "Usually, the team meets on Wednesdays and Thursdays after school, until ~6 PM. During competition/ build season, we usually meet on every school day until ~6 PM. Additional meetings may be scheduled on weekends or during school breaks as needed. All team members are expected to show up for all meetings, unless excused by mentors/ coaches beforehand.",
+      "Usually, the team meets on Wednesdays and Thursdays after school, until ~6 PM. During competition/build season, we usually meet on every school day until ~6 PM. Additional meetings may be scheduled on weekends or during school breaks as needed. All team members are expected to show up for all meetings, unless excused by mentors/coaches beforehand.",
   },
   {
-    question: "When does competition/ build season take place?",
+    question: "When does competition/build season take place?",
     answer:
       "Competition season typically starts in early September, while build season starts around October and runs through December. FTC seasons usually end with regional competitions held between February and April and the World Championship taking place in late April or early May.",
   },
   {
-    question: "When/ Where are the competitions?",
+    question: "When/Where are the competitions?",
     answer:
       "Competitions are usually held at various locations throughout New York City and the surrounding areas. However, the exact locations vary each year. The competitions usually take place on weekends during the competition season, starting from November through April.",
   },
@@ -42,7 +42,7 @@ const faqData: FAQItem[] = [
       "We usually host tryouts towards the end of the school year for the following year. Keep an eye on our Instagram for announcements regarding tryouts and application details.",
   },
   {
-    question: "What happends during tryouts?",
+    question: "What happens during tryouts?",
     answer:
       "During tryouts, applicants will participate in a few activities designed to assess their communication and teamwork abilities. The goal is to primarily evaluate how well candidates can work within a team. No prior robotics, programming, or engineering experience is necessary to join the team.",
   },
@@ -54,7 +54,7 @@ const faqData: FAQItem[] = [
   },
   {
     question:
-      "I have other clubs/ sports/ commitments after school. Can I still join?",
+      "I have other clubs/sports/commitments after school. Can I still join?",
     answer:
       "This depends on the specific schedule and nature of your other commitments. We understand that students have various interests and responsibilities, but being an active member of the ByteKnights requires a significant time commitment. Please consult with our team mentors to discuss your situation.",
   },
@@ -101,75 +101,75 @@ export default function FAQPage() {
               <AccordionContent className="text-lg text-gray-300">
                 If you have any further questions or need more information, feel
                 free to reach out to any of the people below:
-                <div className="mt-4 flex flex-col sm:flex-row w-full items-center justify-center gap-10">
-                  <div className="flex flex-col items-center flex-1">
-                  <h3 className="mt-4 text-2xl font-bold text-yellow-400">
-                    Students
-                  </h3>
-                  <ul className="mt-2 list-inside text-center">
-                    <li className="mb-2 font-bold text-white">
-                    Lubaba N. <br />
-                    <a
-                      href="mailto:lubaban2@nycstudents.net"
-                      className="font-normal text-blue-400 underline hover:text-blue-300"
-                    >
-                      lubaban2@nycstudents.net
-                    </a>
-                    </li>
-                    <li className="mb-2 font-bold text-white">
-                    Christopher M. <br />
-                    <a
-                      href="mailto:christopherm1100@nycstudents.net"
-                      className="font-normal text-blue-400 underline hover:text-blue-300"
-                    >
-                      christopherm1100@nycstudents.net
-                    </a>
-                    </li>
-                    <li className="mb-2 font-bold text-white">
-                    Issac L. <br />
-                    <a
-                      href="mailto:issacl14@nycstudents.net"
-                      className="font-normal text-blue-400 underline hover:text-blue-300"
-                    >
-                      issacl14@nycstudents.net
-                    </a>
-                    </li>
-                  </ul>
+                <div className="mt-4 flex w-full flex-col items-center justify-center gap-10 sm:flex-row">
+                  <div className="flex flex-1 flex-col items-center">
+                    <h3 className="mt-4 text-2xl font-bold text-yellow-400">
+                      Students
+                    </h3>
+                    <ul className="mt-2 list-inside text-center">
+                      <li className="mb-2 font-bold text-white">
+                        Lubaba N. <br />
+                        <a
+                          href="mailto:lubaban2@nycstudents.net"
+                          className="font-normal text-blue-400 underline hover:text-blue-300"
+                        >
+                          lubaban2@nycstudents.net
+                        </a>
+                      </li>
+                      <li className="mb-2 font-bold text-white">
+                        Christopher M. <br />
+                        <a
+                          href="mailto:christopherm1100@nycstudents.net"
+                          className="font-normal text-blue-400 underline hover:text-blue-300"
+                        >
+                          christopherm1100@nycstudents.net
+                        </a>
+                      </li>
+                      <li className="mb-2 font-bold text-white">
+                        Issac L. <br />
+                        <a
+                          href="mailto:issacl14@nycstudents.net"
+                          className="font-normal text-blue-400 underline hover:text-blue-300"
+                        >
+                          issacl14@nycstudents.net
+                        </a>
+                      </li>
+                    </ul>
                   </div>
 
-                  <div className="flex flex-col items-center flex-1">
-                  <h3 className="mt-4 text-2xl font-bold text-yellow-400">
-                    Mentors
-                  </h3>
-                  <ul className="mt-2 list-inside text-center">
-                    <li className="mb-2 font-bold text-white">
-                    Mr. E <br />
-                    <a
-                      href="mailto:mesguerra@schools.nyc.gov"
-                      className="font-normal text-blue-400 underline hover:text-blue-300"
-                    >
-                      mesguerra@schools.nyc.gov
-                    </a>
-                    </li>
-                    <li className="mb-2 font-bold text-white">
-                    Mr. B <br />
-                    <a
-                      href="mailto:kbhatnagar@schools.nyc.gov"
-                      className="font-normal text-blue-400 underline hover:text-blue-300"
-                    >
-                      kbhatnagar@schools.nyc.gov
-                    </a>
-                    </li>
-                    <li className="mb-2 font-bold text-white">
-                    Mr. Harb <br />
-                    <a
-                      href="mailto:aharb@schools.nyc.gov"
-                      className="font-normal text-blue-400 underline hover:text-blue-300"
-                    >
-                      aharb@schools.nyc.gov
-                    </a>
-                    </li>
-                  </ul>
+                  <div className="flex flex-1 flex-col items-center">
+                    <h3 className="mt-4 text-2xl font-bold text-yellow-400">
+                      Mentors
+                    </h3>
+                    <ul className="mt-2 list-inside text-center">
+                      <li className="mb-2 font-bold text-white">
+                        Mr. E <br />
+                        <a
+                          href="mailto:mesguerra@schools.nyc.gov"
+                          className="font-normal text-blue-400 underline hover:text-blue-300"
+                        >
+                          mesguerra@schools.nyc.gov
+                        </a>
+                      </li>
+                      <li className="mb-2 font-bold text-white">
+                        Mr. B <br />
+                        <a
+                          href="mailto:kbhatnagar@schools.nyc.gov"
+                          className="font-normal text-blue-400 underline hover:text-blue-300"
+                        >
+                          kbhatnagar@schools.nyc.gov
+                        </a>
+                      </li>
+                      <li className="mb-2 font-bold text-white">
+                        Mr. Harb <br />
+                        <a
+                          href="mailto:aharb@schools.nyc.gov"
+                          className="font-normal text-blue-400 underline hover:text-blue-300"
+                        >
+                          aharb@schools.nyc.gov
+                        </a>
+                      </li>
+                    </ul>
                   </div>
                 </div>
               </AccordionContent>
