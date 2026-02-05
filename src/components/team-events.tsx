@@ -13,6 +13,15 @@ import {
 // CHANGE EVENTS HERE
 export const TeamEvents: z.infer<typeof TeamEventSchema>[] = [
   {
+    name: "Interest Meeting",
+    date: "2026-02-24",
+    locationName: "Brooklyn Technical High School",
+    locationAddress: "29 Fort Greene Pl, Brooklyn, NY 11217, United States",
+    description:
+      "An introductory meeting for students interested in joining the ByteKnights. Learn about the upcoming tryouts sessions, team structure, and how to get involved!",
+    type: "LOCAL",
+  },
+  {
     name: "FTC NYC Super Qualifier 1",
     date: "2026-02-28",
     locationName: "John Dewey High School",
