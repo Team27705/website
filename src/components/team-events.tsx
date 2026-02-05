@@ -1,4 +1,4 @@
-import { Gamepad2, Sword, Swords, Trophy } from "lucide-react";
+import { Gamepad2, MapPinned, Sword, Swords, Trophy } from "lucide-react";
 import React, { cloneElement } from "react";
 import * as z from "zod";
 import { cn } from "~/lib/utils";
@@ -23,7 +23,7 @@ export const TeamEvents: z.infer<typeof TeamEventSchema>[] = [
   },
 ];
 
-const teamEventEnum = z.enum(["QUALI", "SUPERQUALI", "CHAMPS", "SCRIM"]);
+const teamEventEnum = z.enum(["QUALI", "SUPERQUALI", "CHAMPS", "SCRIM", "LOCAL"]);
 type TeamEventType = z.infer<typeof teamEventEnum>;
 
 const EventTypeIconsMap: Record<TeamEventType, React.ReactNode> = {
@@ -31,6 +31,7 @@ const EventTypeIconsMap: Record<TeamEventType, React.ReactNode> = {
   SUPERQUALI: <Swords />,
   CHAMPS: <Trophy />,
   SCRIM: <Gamepad2 />,
+  LOCAL: <MapPinned />,
 };
 
 const EventTypeColorsMap: Record<
@@ -60,6 +61,12 @@ const EventTypeColorsMap: Record<
     background: "bg-red-900",
     text: "text-red-200",
     border: "border-red-400",
+  },
+  LOCAL: {
+    icon: "stroke-green-100",
+    background: "bg-green-900",
+    text: "text-green-200",
+    border: "border-green-400",
   },
 };
 
