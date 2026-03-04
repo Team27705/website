@@ -68,6 +68,13 @@ export default function HomePage() {
             <AwardEventName>NYC Qualifier 8</AwardEventName>
             <AwardTitle>Reach Award 1st Place</AwardTitle>
           </Award>
+          <Award className="w-42">
+            <AwardEventLogo>
+              <Logo season="decode" variant="gamewordmark" className="w-full" />
+            </AwardEventLogo>
+            <AwardEventName>NYC Super Qualifier 2</AwardEventName>
+            <AwardTitle>Innovate Award 2nd Place</AwardTitle>
+          </Award>
         </div>
       </section>
       <section className="mt-5 max-w-[80vw]">
