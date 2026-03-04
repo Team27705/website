@@ -14,22 +14,13 @@ import {
 export const TeamEvents: z.infer<typeof TeamEventSchema>[] = [
   {
     name: "Interest Meeting",
-    date: "2026-02-24",
+    date: "2026-03-04",
     locationName: "Brooklyn Technical High School",
     locationAddress: "29 Fort Greene Pl, Brooklyn, NY 11217, United States",
     description:
       "An introductory meeting for students interested in joining the ByteKnights. Learn about the upcoming tryouts sessions, team structure, and how to get involved!",
     type: "LOCAL",
-  },
-  {
-    name: "FTC NYC Super Qualifier 1",
-    date: "2026-02-28",
-    locationName: "John Dewey High School",
-    locationAddress: "50 Avenue X, Brooklyn, NY 11223, United States",
-    description:
-      "The first super qualifier event of the FTC season, where top teams from qualifiers compete for a chance to advance to the regional championships.",
-    type: "SUPERQUALI",
-  },
+  }
 ];
 
 const teamEventEnum = z.enum(["QUALI", "SUPERQUALI", "CHAMPS", "SCRIM", "LOCAL"]);
