@@ -20,9 +20,9 @@ const sponsors = [
     name: "Jeffery M. Haitkin '64 Faculty Grant",
   },
   {
-    name: "Koffee Cafe",
-    logo: "/sponsors/koffee.svg",
-    website: "https://www.koffenyc.com",
+    name: "Kofee Cafe",
+    logo: "/sponsors/kofee.svg",
+    website: "https://kofeenyc.com",
   },
   {
     name: "BTHS COMMA",
