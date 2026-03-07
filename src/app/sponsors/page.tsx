@@ -22,7 +22,7 @@ const sponsors = [
   {
     name: "Koffee Cafe",
     logo: "/sponsors/koffee.svg",
-    website: "https://koffenyc.com",
+    website: "https://www.koffenyc.com",
   },
   {
     name: "BTHS COMMA",
