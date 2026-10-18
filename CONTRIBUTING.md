@@ -1,8 +1,6 @@
 # Contributing to the ByteKnights Website
 
-Thank you for helping keep the ByteKnights website up to date! You do not
-need to be a programmer to update the team information, events, awards,
-sponsors, FAQs, or other website content.
+If you're a member of the ByteKnights, hello! Thank you for helping keep the ByteKnights website up to date! You do not need to be a programmer to update the team information, events, awards, sponsors, FAQs, or other website content.
 
 ## Where the website content lives
 
@@ -33,12 +31,12 @@ You can edit the file directly on GitHub:
 5. Scroll to the bottom of the page.
 6. In the commit message box, briefly describe the change, such as
    `Update team members`.
-7. Choose **Create a new branch for this commit and start a pull request**.
-8. Click **Propose changes**.
-9. In the pull request description, explain what you changed and why.
-10. Ask a teammate to review the pull request before merging it.
+7. Choose **Commit directly to the `main` branch**.
+8. Click **Commit changes**.
 
 ## How to edit each section
+
+The data is stored in JSON (JavaScript Object Notation), which is a human and computer readable way to store information.
 
 ### Team members
 
@@ -137,11 +135,12 @@ Please check that:
 - Names, dates, addresses, links, and email addresses are correct.
 - Any new image has been added to the correct `public/` folder.
 - The file still looks similar to the surrounding entries.
-- Your pull request describes what changed.
+- Your commit message describes what changed.
 
 If GitHub reports a formatting or build error, do not worry. Ask a teammate
 who is familiar with the project to help investigate it rather than making
-many additional changes at once.
+many additional changes at once. Since changes go directly to `main`, be
+especially careful to review the edit before committing it.
 
 ## What is `CONTRIBUTING.md`?
 
