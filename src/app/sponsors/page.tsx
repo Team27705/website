@@ -1,33 +1,6 @@
 import { Card, CardContent } from "~/components/ui/card";
 import Image from "next/image";
-
-const sponsors = [
-  {
-    name: "MakeLab",
-    logo: "/sponsors/makelab.svg",
-    website: "https://makelab.com",
-  },
-  {
-    name: "Ike Heller Robotics Center",
-    logo: "/sponsors/ike-heller.png",
-  },
-  {
-    name: "Brooklyn Tech Alumni Foundation",
-    logo: "/sponsors/bths-alumni.svg",
-    website: "https://bthsalumni.org",
-  },
-  {
-    name: "Jeffery M. Haitkin '64 Faculty Grant",
-  },
-  {
-    name: "Kofee Cafe",
-    logo: "/sponsors/kofee.svg",
-    website: "https://kofeenyc.com",
-  },
-  {
-    name: "BTHS COMMA",
-  },
-];
+import { Sponsors } from "~/lib/data";
 
 export default function SponsorsPage() {
   return (
@@ -44,7 +17,7 @@ export default function SponsorsPage() {
         id="sponsors"
       >
         <div className="flex w-full max-w-[min(92vw,1200px)] flex-col flex-wrap items-center justify-center gap-6 sm:flex-row">
-          {sponsors.map((sponsor) => (
+          {Sponsors.map((sponsor) => (
             <Card
               key={sponsor.name}
               className="flex h-60 w-full min-w-[16rem] items-center justify-center bg-gray-800 text-center text-white shadow-lg sm:w-[16rem]"

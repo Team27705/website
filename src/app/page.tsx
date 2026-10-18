@@ -9,6 +9,7 @@ import {
   AwardEventName,
   AwardTitle,
 } from "~/components/award";
+import { Awards, TeamStory } from "~/lib/data";
 
 const videoOpacityLevel = 0.3;
 
@@ -54,27 +55,19 @@ export default function HomePage() {
           WHAT WE'VE DONE
         </h1>
         <div className="mx-auto flex w-full flex-row flex-wrap justify-center gap-8">
-          <Award className="w-42">
-            <AwardEventLogo>
-              <Logo season="decode" variant="gamewordmark" className="w-full" />
-            </AwardEventLogo>
-            <AwardEventName>NYC Qualifier 4</AwardEventName>
-            <AwardTitle>Inspire Award 2nd Place</AwardTitle>
-          </Award>
-          <Award className="w-42">
-            <AwardEventLogo>
-              <Logo season="decode" variant="gamewordmark" className="w-full" />
-            </AwardEventLogo>
-            <AwardEventName>NYC Qualifier 8</AwardEventName>
-            <AwardTitle>Reach Award 1st Place</AwardTitle>
-          </Award>
-          <Award className="w-42">
-            <AwardEventLogo>
-              <Logo season="decode" variant="gamewordmark" className="w-full" />
-            </AwardEventLogo>
-            <AwardEventName>NYC Super Qualifier 2</AwardEventName>
-            <AwardTitle>Innovate Award 2nd Place</AwardTitle>
-          </Award>
+          {Awards.map((award) => (
+            <Award key={award.eventName} className="w-42">
+              <AwardEventLogo>
+                <Logo
+                  season={award.season}
+                  variant="gamewordmark"
+                  className="w-full"
+                />
+              </AwardEventLogo>
+              <AwardEventName>{award.eventName}</AwardEventName>
+              <AwardTitle>{award.title}</AwardTitle>
+            </Award>
+          ))}
         </div>
       </section>
       <section className="mt-5 max-w-[80vw]">
@@ -116,11 +109,7 @@ export default function HomePage() {
           OUR STORY
         </h1>
         <p className="mx-4 max-w-3xl text-center text-lg leading-relaxed text-white sm:mx-0 sm:text-xl">
-          In 2024, the FTC Brooklyn ByteKnights was formed. As a rookie, we used
-          a kit bot and with the limited resources and knowledge we had, we did
-          the best we could. But for our second year, we’re ready to kick it off
-          with a robot of our own! Get ready for this year’s season of FTC as
-          the ByteKnights are ready to crush it!
+          {TeamStory}
         </p>
       </section>
     </main>

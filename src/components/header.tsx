@@ -25,6 +25,7 @@ import {
 } from "./ui/sheet";
 import { Button } from "./ui/button";
 import { cn } from "~/lib/utils";
+import { NavigationItems } from "~/lib/data";
 
 /* Enable header scroll behavior:
   Add id="hero" or data-header-trigger to your hero element.
@@ -32,29 +33,6 @@ import { cn } from "~/lib/utils";
   or use `ScrollTrigger.scrollerProxy(...)`. This isn't necessary for
   GSAP's scrolling wrapper as it does this automatically.
 */
-
-const components: { title: string; href: string; description: string }[] = [
-  {
-    title: "Our Team",
-    href: "/team",
-    description: "Learn more about our team!",
-  },
-  {
-    title: "Sponsors",
-    href: "/sponsors",
-    description: "Discover our sponsors",
-  },
-  {
-    title: "Donate",
-    href: "/donate",
-    description: "Give us a hand to keep us going!",
-  },
-  {
-    title: "FAQs",
-    href: "/faq",
-    description: "Frequently Asked Questions",
-  },
-];
 
 export default function Header() {
   const desktopRef = useRef<HTMLElement | null>(null);
@@ -184,7 +162,7 @@ const DesktopHeader = React.forwardRef<HTMLElement, { className?: string }>(
                 />
               </NavigationMenuLink>
             </NavigationMenuItem>
-            {components.map((component) => (
+            {NavigationItems.map((component) => (
               <NavigationMenuItem key={component.title}>
                 <Tooltip>
                   <TooltipTrigger asChild>
@@ -270,7 +248,7 @@ const MobileHeader = React.forwardRef<HTMLElement, { className?: string }>(
                     </p>
                   </NavigationMenuLink>
                 </NavigationMenuItem>
-                {components.map((component) => (
+                {NavigationItems.map((component) => (
                   <NavigationMenuItem key={component.title} className="w-full">
                     <NavigationMenuLink
                       href={component.href}

@@ -9,7 +9,7 @@ import {
   TeamDepartments,
   getMembersByDepartment,
   getTeamMemberInitials,
-} from "~/components/team-members";
+} from "~/lib/data";
 
 export default function TeamPage() {
   return (

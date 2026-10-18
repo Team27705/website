@@ -1,7 +1,7 @@
 import { Gamepad2, MapPinned, Sword, Swords, Trophy } from "lucide-react";
 import React, { cloneElement } from "react";
-import * as z from "zod";
 import { cn } from "~/lib/utils";
+import { TeamEvents, type TeamEventType } from "~/lib/data";
 import {
   Card,
   CardContent,
@@ -9,22 +9,6 @@ import {
   CardHeader,
   CardTitle,
 } from "./ui/card";
-
-// CHANGE EVENTS HERE
-export const TeamEvents: z.infer<typeof TeamEventSchema>[] = [
-  {
-    name: "Interest Meeting",
-    date: "2026-03-04",
-    locationName: "Brooklyn Technical High School",
-    locationAddress: "29 Fort Greene Pl, Brooklyn, NY 11217, United States",
-    description:
-      "An introductory meeting for students interested in joining the ByteKnights. Learn about the upcoming tryouts sessions, team structure, and how to get involved!",
-    type: "LOCAL",
-  }
-];
-
-const teamEventEnum = z.enum(["QUALI", "SUPERQUALI", "CHAMPS", "SCRIM", "LOCAL"]);
-type TeamEventType = z.infer<typeof teamEventEnum>;
 
 const EventTypeIconsMap: Record<TeamEventType, React.ReactNode> = {
   QUALI: <Sword />,
@@ -69,17 +53,6 @@ const EventTypeColorsMap: Record<
     border: "border-green-400",
   },
 };
-
-const TeamEventSchema = z.object({
-  name: z.string().min(1).max(100),
-  date: z.string().refine((date) => !isNaN(Date.parse(date)), {
-    message: "Invalid date format",
-  }),
-  locationName: z.string().max(100),
-  locationAddress: z.string().min(1).max(200),
-  description: z.string().max(1000).optional(),
-  type: teamEventEnum,
-});
 
 export function TeamEventsComponent({ className }: { className?: string }) {
   return (
