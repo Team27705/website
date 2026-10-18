@@ -1,6 +1,6 @@
 # Contributing to the ByteKnights Website
 
-If you're a member of the ByteKnights, hello! Thank you for helping keep the ByteKnights website up to date! You do not need to be a programmer to update the team information, events, awards, sponsors, FAQs, or other website content.
+If you're a member of the ByteKnights, hello from the past! This file was written by Issac, a former member of the team. Thank you for helping keep the ByteKnights website up to date! You do not need to be a programmer to update the team information, events, awards, sponsors, FAQs, or other website content.
 
 ## Where the website content lives
 
@@ -25,14 +25,14 @@ The file contains:
 You can edit the file directly on GitHub:
 
 1. Open [`src/lib/data.ts`](./src/lib/data.ts).
-2. Click the pencil **Edit this file** button.
+2. Click the pencil `Edit this file` button.
 3. Find the section you want to update.
-4. Change only the information that needs changing.
-5. Scroll to the bottom of the page.
+4. Change whatever information needs changing.
+5. Click the green `Commit changes...` button.
 6. In the commit message box, briefly describe the change, such as
-   `Update team members`.
-7. Choose **Commit directly to the `main` branch**.
-8. Click **Commit changes**.
+   `chore: update team members`.
+7. Choose `Commit directly to the main branch`.
+8. Click `Commit changes`.
 
 ## How to edit each section
 
@@ -93,7 +93,10 @@ Example:
 
 Each award has:
 
-- `season`: usually `decode` or `into-the-deep`
+- `season`: shorthand for the season the award was received during.
+  - 2026-2027: `biobuzz`
+  - 2025-2026: `decode`
+  - 2024-2025: `into-the-deep`
 - `eventName`: the event where the award was received
 - `title`: the award and placement
 
@@ -128,8 +131,6 @@ controls the story paragraph on the home page.
 - Do not put passwords, private keys, or other confidential information in
   this file or anywhere in the repository.
 
-## Before submitting a pull request
-
 Please check that:
 
 - Names, dates, addresses, links, and email addresses are correct.
@@ -139,10 +140,10 @@ Please check that:
 
 If GitHub reports a formatting or build error, do not worry. Ask a teammate
 who is familiar with the project to help investigate it rather than making
-many additional changes at once. Since changes go directly to `main`, be
-especially careful to review the edit before committing it.
+many additional changes at once. Since changes go directly to `main`, any edits
+committed will immediately be published.
 
-## What is `CONTRIBUTING.md`?
+## Why is this file called `CONTRIBUTING.md`?
 
 `CONTRIBUTING.md` is the standard filename many GitHub projects use for
 instructions to people who want to make changes. GitHub recognizes it and
