@@ -1,7 +1,8 @@
 import { Gamepad2, MapPinned, Sword, Swords, Trophy } from "lucide-react";
 import React, { cloneElement } from "react";
 import { cn } from "~/lib/utils";
-import { TeamEvents, type TeamEventType } from "~/lib/data";
+import { TeamEvents } from "~/lib/data";
+import { type TeamEventType } from "~/lib/data-types";
 import {
   Card,
   CardContent,

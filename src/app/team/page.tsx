@@ -7,9 +7,8 @@ import {
 import { Avatar, AvatarImage, AvatarFallback } from "~/components/ui/avatar";
 import {
   TeamDepartments,
-  getMembersByDepartment,
-  getTeamMemberInitials,
 } from "~/lib/data";
+import { getMembersByDepartment, getTeamMemberInitials } from "~/lib/data-utils";
 
 export default function TeamPage() {
   return (

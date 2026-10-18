@@ -1,25 +1,23 @@
-import * as z from "zod";
+import type {
+  Award,
+  FAQContact,
+  FAQItem,
+  NavigationItem,
+  Sponsor,
+  TeamEvent,
+  TeamMember,
+} from "./data-types";
 
-const TeamDepartment = z.enum([
+export const TeamDepartments = [
   "Mentors",
   "Captains",
   "Operations",
   "Mechanical",
   "Electrical",
   "Programming",
-]);
-export type TeamDepartment = z.infer<typeof TeamDepartment>;
-export const TeamDepartments = TeamDepartment.options;
+] as const;
 
-const TeamMember = z.object({
-  image: z.string(),
-  name: z.string(),
-  department: TeamDepartment,
-  role: z.string().optional(),
-});
-export type TeamMember = z.infer<typeof TeamMember>;
-
-export const TeamMembers: TeamMember[] = [
+export const TeamMembers = [
   { image: "/team/mr-e.jpg", name: "Mr. E", department: "Mentors" },
   { image: "/team/mr-b.jpg", name: "Mr. B", department: "Mentors" },
   { image: "/team/mr-harb.jpg", name: "Mr. Harb", department: "Mentors" },
@@ -76,41 +74,9 @@ export const TeamMembers: TeamMember[] = [
   },
   { image: "/team/madeha.jpg", name: "Madeha B.", department: "Programming" },
   { image: "/team/issac.jpg", name: "Issac L.", department: "Programming" },
-];
+] satisfies TeamMember[];
 
-export function getMembersByDepartment(department: string) {
-  return TeamMembers.filter((member) => member.department === department);
-}
-
-export function getTeamMemberInitials(name: string) {
-  return name
-    .split(" ")
-    .map((part) => part.charAt(0).toUpperCase())
-    .join("");
-}
-
-export const TeamEventType = z.enum([
-  "QUALI",
-  "SUPERQUALI",
-  "CHAMPS",
-  "SCRIM",
-  "LOCAL",
-]);
-export type TeamEventType = z.infer<typeof TeamEventType>;
-
-const TeamEvent = z.object({
-  name: z.string().min(1).max(100),
-  date: z.string().refine((date) => !isNaN(Date.parse(date)), {
-    message: "Invalid date format",
-  }),
-  locationName: z.string().max(100),
-  locationAddress: z.string().min(1).max(200),
-  description: z.string().max(1000).optional(),
-  type: TeamEventType,
-});
-export type TeamEvent = z.infer<typeof TeamEvent>;
-
-export const TeamEvents: TeamEvent[] = [
+export const TeamEvents = [
   {
     name: "Interest Meeting",
     date: "2026-03-04",
@@ -120,15 +86,9 @@ export const TeamEvents: TeamEvent[] = [
       "An introductory meeting for students interested in joining the ByteKnights. Learn about the upcoming tryouts sessions, team structure, and how to get involved!",
     type: "LOCAL",
   },
-];
+] satisfies TeamEvent[];
 
-export type Award = {
-  season: "decode" | "into-the-deep";
-  eventName: string;
-  title: string;
-};
-
-export const Awards: Award[] = [
+export const Awards = [
   {
     season: "decode",
     eventName: "NYC Qualifier 4",
@@ -144,15 +104,9 @@ export const Awards: Award[] = [
     eventName: "NYC Super Qualifier 2",
     title: "Innovate Award 2nd Place",
   },
-];
+] satisfies Award[];
 
-export type Sponsor = {
-  name: string;
-  logo?: string;
-  website?: string;
-};
-
-export const Sponsors: Sponsor[] = [
+export const Sponsors = [
   {
     name: "MakeLab",
     logo: "/sponsors/makelab.svg",
@@ -171,14 +125,9 @@ export const Sponsors: Sponsor[] = [
     website: "https://kofeenyc.com",
   },
   { name: "BTHS COMMA" },
-];
+] satisfies Sponsor[];
 
-export type FAQItem = {
-  question: string;
-  answer: string;
-};
-
-export const FAQItems: FAQItem[] = [
+export const FAQItems = [
   {
     question: "What are the Brooklyn ByteKnights?",
     answer:
@@ -226,7 +175,7 @@ export const FAQItems: FAQItem[] = [
     answer:
       "This depends on the specific schedule and nature of your other commitments. We understand that students have various interests and responsibilities, but being an active member of the ByteKnights requires a significant time commitment. Please consult with our team mentors to discuss your situation.",
   },
-];
+] satisfies FAQItem[];
 
 export const NavigationItems = [
   {
@@ -249,7 +198,7 @@ export const NavigationItems = [
     href: "/faq",
     description: "Frequently Asked Questions",
   },
-];
+] satisfies NavigationItem[];
 
 export const FAQContacts = {
   students: [
@@ -262,7 +211,7 @@ export const FAQContacts = {
     { name: "Mr. B", email: "kbhatnagar@schools.nyc.gov" },
     { name: "Mr. Harb", email: "aharb@schools.nyc.gov" },
   ],
-};
+} satisfies Record<"students" | "mentors", FAQContact[]>;
 
 export const TeamStory =
   "In 2024, the FTC Brooklyn ByteKnights was formed. As a rookie, we used a kit bot and with the limited resources and knowledge we had, we did the best we could. But for our second year, we’re ready to kick it off with a robot of our own! Get ready for this year’s season of FTC as the ByteKnights are ready to crush it!";
